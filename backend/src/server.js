@@ -346,3 +346,10 @@ app.delete('/curtidos/remover', (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}`);
 });
+
+//mkdir pasta
+//cd pasta
+//code .
+//npm install express nodemon cors mysql2
+//npm init -y
+//npm start
