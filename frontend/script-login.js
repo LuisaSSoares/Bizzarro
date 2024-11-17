@@ -12,7 +12,7 @@ async function login(event) {
     }
 
     const data = { email, senha };
-    const response = await fetch('http://localhost:3013/usuario/login', {
+    const response = await fetch('https://bizzarro.onrender.com/usuario/login', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         // Apresenta os detalhes do produto através do backend
-        const response = await fetch(`http://localhost:3013/produtos/${produtoSelecionadoID}`, {
+        const response = await fetch(`https://bizzarro.onrender.com/produtos/${produtoSelecionadoID}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Apresenta a a imagem atual do produto product
             const imagemAtual = document.getElementById('imagem-atual');
             if (product.imagem) {
-                imagemAtual.src = `http://localhost:3013/uploads/${product.imagem}`;
+                imagemAtual.src = `https://bizzarro.onrender.com/uploads/${product.imagem}`;
                 imagemAtual.style.display = 'block'; 
             }
         } else {
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             try {
                 // Envia os dados do formulário para o backend par ser atualizado
-                const updateResponse = await fetch(`http://localhost:3013/produtos/editar/${produtoSelecionadoID}`, {
+                const updateResponse = await fetch(`https://bizzarro.onrender.com/produtos/editar/${produtoSelecionadoID}`, {
                     method: 'PUT',
                     body: formData 
                 });

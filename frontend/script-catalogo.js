@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     try {
         // Apresenta a lista de produtose do backend
-        const response = await fetch('http://localhost:3013/produtos/listar', {
+        const response = await fetch('https://bizzarro.onrender.com/produtos/listar', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                 // Cria a estrutura HTML para os cards dos produtos
                 let productCard = `
-                    <div class="produto produtoCatalogo" data-id="${product.idproduto}" data-nome="${product.nome}" data-imagem="http://localhost:3013/uploads/${product.imagem}" data-valor="${precoFormatted}" data-descricao="${product.descricao}">
-                        <img src="http://localhost:3013/uploads/${product.imagem}" class="imgCatalogo" alt="${product.nome}">
+                    <div class="produto produtoCatalogo" data-id="${product.idproduto}" data-nome="${product.nome}" data-imagem="https://bizzarro.onrender.com/uploads/${product.imagem}" data-valor="${precoFormatted}" data-descricao="${product.descricao}">
+                        <img src="https://bizzarro.onrender.com/uploads/${product.imagem}" class="imgCatalogo" alt="${product.nome}">
                         <p>${product.nome}</p>
                         <div class="precos">
                             <h3>${precoFormatted}</h3>

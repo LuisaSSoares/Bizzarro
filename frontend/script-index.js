@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
   try {
       // Apresenta os produtos com a categoria 'desconto'
-      const responseDesconto = await fetch('http://localhost:3013/produtos/categoria/desconto', {
+      const responseDesconto = await fetch('https://bizzarro.onrender.com/produtos/categoria/desconto', {
           method: 'GET',
           headers: {
               'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               listaProdutosDesconto.innerHTML += `
               <li>
                   <div class="produto produtoCatalogo" data-id="${produto.idproduto}" data-nome="${produto.nome}" data-imagem="./assets/produtos/${produto.imagem.replace(/\s/g, '%20')}" data-valor="R$${produto.preco}" data-descricao="${produto.descricao}">
-                      <img src="http://localhost:3013/uploads/${produto.imagem.replace(/\s/g, '%20')}" class="imgCatalogo">
+                      <img src="https://bizzarro.onrender.com/uploads/${produto.imagem.replace(/\s/g, '%20')}" class="imgCatalogo">
                       <h1>${produto.nome}</h1>
                       <div class="precos">
                           <h3>R$${parseFloat(produto.preco).toFixed(2)}</h3>
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
 
       // Apresenta os produtos com a categoria 'regular'
-      const responseRegular = await fetch('http://localhost:3013/produtos/categoria/regular', {
+      const responseRegular = await fetch('https://bizzarro.onrender.com/produtos/categoria/regular', {
           method: 'GET',
           headers: {
               'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', async () => {
               listaProdutos.innerHTML += `
               <li>
                   <div class="produto produtoDestaque" data-id="${produto.idproduto}" data-nome="${produto.nome}" data-imagem="../backend/src/produtos/${produto.imagem.replace(/\s/g, '%20')}" data-valor="${produto.preco}" data-descricao="${produto.descricao}">
-                      <img src="http://localhost:3013/uploads/${produto.imagem.replace(/\s/g, '%20')}" class="produtoImg">
+                      <img src="https://bizzarro.onrender.com/uploads/${produto.imagem.replace(/\s/g, '%20')}" class="produtoImg">
                       <p>${produto.nome}</p>
                       <p><b>R$${parseFloat(produto.preco).toFixed(2)}</b></p>
                       <div class="produtoCarrinhoCurtidos">

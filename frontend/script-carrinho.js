@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        const response = await fetch(`http://localhost:3013/carrinho/${usuarioID}`, {
+        const response = await fetch(`https://bizzarro.onrender.com/carrinho/${usuarioID}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         <a href="javascript:void(0);" class="produto-link">
                             <li>
                                 <div class="produto produtoCatalogo" id="${produto.idproduto}">
-                                    <img src="http://localhost:3013/uploads/${produto.imagem}" alt="" class="imgCatalogo">
+                                    <img src="https://bizzarro.onrender.com/uploads/${produto.imagem}" alt="" class="imgCatalogo">
                                     <p>${produto.nome}</p>
                                     <div class="precos">
                                         <h3>R$ ${parseFloat(produto.preco).toFixed(2)}</h3>
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         <a href="javascript:void(0);" class="produto-link">
                             <li>
                                 <div class="produtoFinal" id="${produto.idproduto}">
-                                    <img src="http://localhost:3013/uploads/${produto.imagem}" alt="" id="imgFinal">
+                                    <img src="https://bizzarro.onrender.com/uploads/${produto.imagem}" alt="" id="imgFinal">
                                     <p><b>${produto.nome}</b></p>
                                     <p>R$ ${parseFloat(produto.preco).toFixed(2)}</p>
                                 </div>
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         btnComprar.addEventListener('click', async () => {
             try {
                 // Finaliza a compra no backend e limpa o carrinho
-                const clearCartResponse = await fetch(`http://localhost:3013/carrinho/limpar/${usuarioID}`, {
+                const clearCartResponse = await fetch(`https://bizzarro.onrender.com/carrinho/limpar/${usuarioID}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json'

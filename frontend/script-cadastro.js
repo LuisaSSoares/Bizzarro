@@ -8,7 +8,7 @@ async function cadastrar(event) {
     const senha = document.getElementById('senhaUser').value;
 
     const data = {nome, email, telefone, cpf, senha}
-    const response = await fetch('http://localhost:3013/usuario/cadastrar', {
+    const response = await fetch('https://bizzarro.onrender.com/usuario/cadastrar', {
         method: "POST",
         headers: {
             "Content-Type":"application/json"

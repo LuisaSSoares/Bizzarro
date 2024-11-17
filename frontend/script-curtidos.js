@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        const response = await fetch(`http://localhost:3013/curtidos/${usuarioID}`, {
+        const response = await fetch(`https://bizzarro.onrender.com/curtidos/${usuarioID}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         <a href="./produto.html" class="produto-link" data-produto-id="${produto.idproduto}">
                             <li>
                                 <div class="produto produtoCatalogo" id="${produto.idproduto}">
-                                    <img src="http://localhost:3013/uploads/${produto.imagem}" alt="" class="imgCatalogo">
+                                    <img src="https://bizzarro.onrender.com/uploads/${produto.imagem}" alt="" class="imgCatalogo">
                                     <p>${produto.nome}</p>
                                     <div class="precos">
                                         <h3>R$ ${parseFloat(produto.preco).toFixed(2)}</h3>

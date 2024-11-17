@@ -24,7 +24,7 @@ document.getElementById('form-cadastrar-produto').addEventListener('submit', asy
 
     try {
         // Realiza o request para o backend para criar o produto 
-        const response = await fetch('http://localhost:3013/produtos/cadastrar', {
+        const response = await fetch('https://bizzarro.onrender.com/produtos/cadastrar', {
             method: 'POST',
             body: formData 
         });

@@ -80,7 +80,7 @@ function atualizarPerfil(novoNome, novoEmail) {
     let dados = JSON.parse(localStorage.getItem('informacoes'));
  
     if (novoNome && novoEmail) {
-        fetch(`http://localhost:3013/usuario/editar/${dados.idusuario}`, {
+        fetch(`https://bizzarro.onrender.com/usuario/editar/${dados.idusuario}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

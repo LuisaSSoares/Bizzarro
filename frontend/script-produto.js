@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Carrega os detalhes dos produtos 
     async function loadProductDetails() {
         try {
-            const result = await fetchData(`http://localhost:3013/produtos/${produtoSelecionadoID}`);
+            const result = await fetchData(`https://bizzarro.onrender.com/produtos/${produtoSelecionadoID}`);
             if (result.success) {
                 const product = result.data;
                 displayProductDetails(product);
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Apresenta os detalhes do produto no DOM
     function displayProductDetails(product) {
-        document.getElementById('img-produto').src = `http://localhost:3013/uploads/${product.imagem.replace(/\s/g, '%20')}`;
+        document.getElementById('img-produto').src = `https://bizzarro.onrender.com/uploads/${product.imagem.replace(/\s/g, '%20')}`;
         document.getElementById('nome-produto').textContent = product.nome;
         document.getElementById('valor-produto').textContent = `R$ ${parseFloat(product.preco).toFixed(2)}`;
         document.getElementById('descricao').textContent = product.descricao;
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Verifica se o produto já foi curtido pelo usuário
     async function checkCurtidosStatus() {
         try {
-            const curtidosResult = await fetchData(`http://localhost:3013/curtidos/${usuarioID}`);
+            const curtidosResult = await fetchData(`https://bizzarro.onrender.com/curtidos/${usuarioID}`);
             if (curtidosResult.success) {
                 const curtidos = curtidosResult.data;
                 const isCurtido = curtidos.some(curtido => curtido.idproduto === parseInt(produtoSelecionadoID));
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Adiciona o produto ao carrinho
     async function addToCart() {
         try {
-            const result = await fetchData('http://localhost:3013/carrinho/adicionar', {
+            const result = await fetchData('https://bizzarro.onrender.com/carrinho/adicionar', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ produto_id: produtoSelecionadoID, usuario_id: usuarioID, quantidade: 1 })
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Adiciona o produto aos curtidos
     async function addToCurtidos() {
         try {
-            const result = await fetchData('http://localhost:3013/curtidos/adicionar', {
+            const result = await fetchData('https://bizzarro.onrender.com/curtidos/adicionar', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ produto_id: produtoSelecionadoID, usuario_id: usuarioID })
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Remove o produto dos curtidos
     async function removeFromCurtidos() {
         try {
-            const result = await fetchData('http://localhost:3013/curtidos/remover', {
+            const result = await fetchData('https://bizzarro.onrender.com/curtidos/remover', {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ produto_id: produtoSelecionadoID, usuario_id: usuarioID })
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!confirmDelete) return;
 
         try {
-            const result = await fetchData(`http://localhost:3013/produtos/excluir/${produtoSelecionadoID}`, {
+            const result = await fetchData(`https://bizzarro.onrender.com/produtos/excluir/${produtoSelecionadoID}`, {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' }
             });
