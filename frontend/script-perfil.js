@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
             perfilButton.addEventListener('click', paginaPerfil);
         }
  
-    if (window.location.href.toString() === "http://127.0.0.1:5500/frontend/perfil.html") {
+    if (window.location.href.toString() === "https://bizzarro.vercel.app/perfil.html") {
         document.getElementById('nomeUsuario').textContent = dados.nome;
         document.getElementById('emailUsuario').textContent = dados.email
  
