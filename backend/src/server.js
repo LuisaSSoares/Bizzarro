@@ -186,27 +186,6 @@ app.delete("/produtos/excluir/:id", (req, res) => {
   });
 });
 
-// Rota DELETE para deletar um produto do catálogo (apenas admin pode deletar)
-app.delete('/produtos/excluir/:id', checkAdmin, (request, response) => {
-  const { id } = request.params;
-  const query = "DELETE FROM produto WHERE idproduto = ?";
-
-  connection.query(query, [id], (err, results) => {
-      if (err) {
-          return response.status(500).json({
-              success: false,
-              message: "Erro ao excluir o produto",
-              error: err
-          });
-      }
-      response.status(200).json({
-          success: true,
-          message: "Produto excluído com sucesso",
-          data: results
-      });
-  });
-});
-
 // Rota para listar produtos com a categoria de 'desconto'
 app.get('/produtos/categoria/desconto', (req, res) => {
   const sql = 'SELECT * FROM produto WHERE categoria = "desconto"';
