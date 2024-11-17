@@ -7,7 +7,7 @@ const cors = require("cors");
 
 app.use(express.json());
 app.use(cors());
-app.use("/uploads", express.static("src/produtos"));
+app.use("/uploads", express.static("src/produtos"))
 
 // função Middleware para validar se o usuário é um admin
 function checkAdmin(req, res, next) {
