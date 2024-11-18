@@ -325,3 +325,22 @@ passo 4: Clique em 'Import': Clique no botão ‘Import’ referente ao projeto 
 passo 5: Escreva o nome do seu projeto: Prencha o campo com o nome do projeto que você está importando.
 
 passo 6: Clique em 'Deploy': Clique no botão ‘Deploy’ para realizar o deploy do seu projeto.
+
+**BACK-END: deploy**
+passo 1: criar um novo projeto: Após realizar o login no Render a partir de uma conta no GitHub (por exemplo), ele vai abrir automaticamente a página de "Dashboard". Nessa página, ao lado de "My Workspace", clique em "+ New".
+
+passo 2: selecione "Web Service": Após clicar nesse botão, irá aparecer diversas opções. Clique em "Web Service" para subir o projeto que será realizado o deploy do backend. 
+
+passo 3: selecione o projeto: Após isso, irá aparecer diversos repositório da sua conta do GitHub conectada. Nesse caso, foi selecionado o arquivo "deploy-back-bizarro" para realizar essa ação. Após selecionar o repositório, clique em "Connect".
+
+passo 4: preencha os campos do projeto correspondente ao servidor: Após clicar em "Connect", irá abrir uma página com o nome do projeto e a branch que está sendo utilizada (main). Abaixo, deverão ser preenchidos os campos de "Root Directory" com a pasta do backend e o "Start Command" com o comando utilizado para iniciar o servidor (que nesse caso será "npm start").
+
+passo 5: defina as variáveis do arquivo ".env": Abaixo, irá aparecer um campo que será prenchido conforme as variáveis e dados correspondentes ao arquivo ".env" do projeto, correspondentes aos dados fornecidos pelo banco de dados no Clever Cloud.
+
+passo 6: selecione o plano gratuito: Por fim, selecione o plano gratuito para realizar o deploy do projeto.
+
+passo 7: confira o processo de deploy: Após confirmar esse processo, o Render irá realizar o deploy do projeto. Você pode conferir o processo no "logs".
+
+passo 8: conferir se o deploy deu certo: Caso o deploy der certo, irá aparecer a mensagem da porta em que o servidor está rodando e do Mysql conectado. A mensagem "Your service is live" irá aparecer abaixo.
+
+passo 9: substitua as rotas "localhost" pelo adquirido no render: O Render dará um link do servidor, e ele deve ser inserido em todas as rotas fetch que estejam com localhost. Isso vale para as rotas de imagem também, pois elas estão salvas dentro do backend. Segue ao lado um exemplo de rota que houve essa alteração.
